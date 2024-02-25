@@ -17,7 +17,9 @@ export const Cart = (items) => {
     <>
 
       <ToastContainer/> 
-      <div className="container text-center" style={{ width: "700px" }}>
+      <div className="container cartcontainer text-center" style={{ width: "700px" }}>
+        <div className="emptyportion">
+
         {
           cartitem.length == 0 && (
             <>
@@ -26,18 +28,19 @@ export const Cart = (items) => {
             </>
           )
         }
+        </div>
         {
           cartitem.map((item) => (
             <div key={item.id} className="container my-2">
-              <div class="card mb-3 text-center d-flex align-items-center bg-dark text-white p-4" style={{ width: "650px" }}>
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src={item.imgSrc} class="img-fluid rounded-start" alt="..." />
+              <div className="card mb-3 text-center d-flex align-items-center bg-dark text-white p-4">
+                <div className="row g-0">
+                  <div className="col-md-4">
+                    <img src={item.imgSrc} className="img-fluid rounded-start" alt="..." />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">{item.title}</h5>
-                      <p class="card-text">{item.title}</p>
+                  <div className="col-md-8">
+                    <div className="card-body">
+                      <h5 className="card-title">{item.title}</h5>
+                      <p className="card-text">{item.title}</p>
                       <button className='btn btn-primary mx-2'>{item.price} ₹</button>
                       <button className='btn btn-warning'>Buy Now</button>
                     </div>
@@ -64,7 +67,7 @@ export const Cart = (items) => {
                   theme: "light",
                   transition: Bounce,
                   });
-                 }} className='btn btn-warning'>Clear Cart</button>
+                 }} className='btn clearbtn btn-warning'>Clear Cart</button>
             </>
           )
         }

@@ -10,10 +10,12 @@ export const Navbar = () => {
   const carttotalprice = useSelector(selectcarttotaprice);
   return (
     <>
-    <div className="navbar px-5 bg-black text-white">
+    <nav>
+
+    <div className="navbar navpt bg-dark px-4 py-2 text-white">
         <Link to={'/'} style={{textDecoration:'none' ,color:'white'}} className="left"><h4>Redux-toolkit</h4></Link>
         <div className="mid">
-            <button className='btn btn-warning'>Cart Item Total Price = {carttotalprice} ₹</button>
+            <button className='btn btn-warning'>Total Price = {carttotalprice} ₹</button>
         </div>
         <Link to={'/cart'} className="right">
         <button type="button" className="btn btn-primary position-relative">
@@ -26,6 +28,7 @@ export const Navbar = () => {
 </button>
         </Link>
     </div>
+    </nav>
     </>
   )
 }
